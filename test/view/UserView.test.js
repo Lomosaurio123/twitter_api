@@ -12,6 +12,12 @@ describe("Test for UserView", () => {
     test("Return an error object when try to create a new user with a playload with invalid propierties", () => {
         const playload = {username: null, name : 12, id: "id"}
         const result = UserView.createUser(playload)
-        expect(result.error).toMatch(/necesitan tener una valor válido/)
+        expect(result.error).toMatch(/necesitan tener un valor válido/)
+    })
+
+    test("Return an error object when try to create a new user with a playload with missing propierties", () => {
+        const playload = {username: "Username"}
+        const result = UserView.createUser(playload)
+        expect(result.error).toMatch(/necesitan tener un valor válido/)
     })
 })

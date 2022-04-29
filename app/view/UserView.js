@@ -9,7 +9,7 @@ class UserView {
         else if(typeof playload.username === 'string' && typeof playload.name === 'string' && typeof playload.id === 'number') {
             return UserService.create(playload.id, playload.username, playload.name)
         } else {
-            return {error: 'Las propiedades del playload necesitan tener una valor válido'}
+            return {error: 'Las propiedades del playload necesitan tener un valor válido'}
         }
     }
 }
